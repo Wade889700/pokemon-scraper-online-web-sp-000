@@ -10,8 +10,8 @@ class Pokemon
     @@all << self
   end
 
-  def self.all 
-    @@all 
+  def self.all
+    @@all
   end
 
   def self.save(name, type, db)
@@ -19,7 +19,9 @@ class Pokemon
   end
 
   def self.find(id, db)
-    db.execute("SELECT * FROM pokemon WHERE id = #{id}").flatten
+    name = db.execute("SELECT name FROM pokemon WHERE id = #{id}").flatten[0]
+    type = db.execute("SELECT type FROM pokemon WHERE id = #{id}").flatten[0]
+    name = db.execute("SELECT name FROM pokemon WHERE id = #{id}").flatten[0]
   end
 
   def alter_hp(new_hp)
