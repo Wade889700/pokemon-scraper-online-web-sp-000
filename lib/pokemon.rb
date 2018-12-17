@@ -1,12 +1,17 @@
 class Pokemon
   attr_accessor :id, :name, :type, :db, :hp
-
-  def initialize(id, name, type, hp, db)
-    @id = id
-    @name = name
-    @type = type
-    @db = db
+  @@all =[]
+  def initialize(pokemon)
+    @id = pokemon[:id]
+    @name = pokemon[:name]
+    @type = pokemon[:type]
+    @db = pokemon[:db]
     @hp = 60
+    @@all << self
+  end
+
+  def self.all 
+    @@all 
   end
 
   def self.save(name, type, db)
