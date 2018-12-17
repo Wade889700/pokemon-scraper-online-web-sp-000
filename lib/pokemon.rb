@@ -22,7 +22,7 @@ class Pokemon
     name = db.execute("SELECT name FROM pokemon WHERE id = #{id}").flatten[0]
     type = db.execute("SELECT type FROM pokemon WHERE id = #{id}").flatten[0]
     hp = db.execute("SELECT hp FROM pokemon WHERE id = #{id}").flatten[0]
-    pokemon_hash = {id:id, name:name, type: type, hp:hp, db:db}
+    pokemon_hash = {id:id, name:name, type:type, hp:hp, db:db}
 
     new_pokemon = Pokemon.new(pokemon_hash)
   end
