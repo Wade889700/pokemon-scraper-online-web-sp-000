@@ -6,7 +6,7 @@ class Pokemon
     @name = pokemon[:name]
     @type = pokemon[:type]
     @db = pokemon[:db]
-    @hp = 60
+    @hp = pokemon[:hp]
     @@all << self
     pokemon
   end
